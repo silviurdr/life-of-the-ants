@@ -5,15 +5,19 @@ public abstract class Ant {
 
     private int xPosition;
     private int yPosition;
-    private String[][] position;
     private String antType;
-    private int maxXNestSize = NestLoader.antsNest.length - 1;
-    private int maxYNestSize = NestLoader.antsNest[0].length -1 ;
+    private String antFootprint;
 
     String[][] nest = NestLoader.antsNest;
-
-
     private int randomX, randomY;
+
+    public String getAntFootprint() {
+        return antFootprint;
+    }
+
+    public void setAntFootprint(String antFootprint) {
+        this.antFootprint=antFootprint;
+    }
 
     private void determineAntPosition() {
 
@@ -32,10 +36,7 @@ public abstract class Ant {
         NestLoader.antsNest[xPosition][yPosition] = this.antType;
     }
 
-
-    public int getxPosition() {
-        return xPosition;
-    }
+    public int getxPosition() {return xPosition; }
 
     public void setxPosition(int xPosition) {
         this.xPosition=xPosition;
@@ -51,23 +52,10 @@ public abstract class Ant {
 
     public abstract void move();
 
-    public void addInNest(String[][] cell) {
-    }
-
-    public String[][] getPosition() {
-       return position;
-    }
-
-    public void setPosition(String[][] position) {
-      this.position=position;
-    }
 
     public String getAntType() {
         return antType;
     }
 
-    public void setAntType(String antType) {
-       this.antType=antType;
-    }
 
 }

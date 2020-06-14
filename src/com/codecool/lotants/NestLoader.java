@@ -41,6 +41,7 @@ public class NestLoader {
             System.out.print('-');
             k++;
         }
+        System.out.println();
     }
 
     public static void addAnt(int x, int y, Ant ant) {
@@ -53,7 +54,7 @@ public class NestLoader {
     }
 
     public static void clearAntPosition(int x, int y, Ant ant){
-        antsNest[x][y] = "*";
+        antsNest[x][y] = ant.getAntFootprint();
     }
 
 }

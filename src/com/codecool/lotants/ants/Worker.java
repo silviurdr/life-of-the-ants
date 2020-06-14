@@ -5,10 +5,12 @@ import com.codecool.lotants.Utils;
 public class Worker extends Ant {
 
     private static String workerType = "\033[0;32m" +  "W" + "\033[0m";
+    private static String workerFootprint = "\033[0;32m" +  "-" + "\033[0m";
 
 
     public Worker() {
        super(workerType);
+       this.setAntFootprint(workerFootprint);
     }
 
     @Override

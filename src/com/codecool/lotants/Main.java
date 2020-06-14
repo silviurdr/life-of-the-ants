@@ -35,7 +35,6 @@ public class Main {
 
             Integer userDecision = userInput.nextInt();
             if (userDecision == 1) {
-                System.out.println("face ceva???");
                 for (Ant ant : NestLoader.nestPopulation) {
                     System.out.println("Position before move:" + ant.getxPosition());
                     NestLoader.clearAntPosition(ant.getxPosition(), ant.getyPosition(), ant);
