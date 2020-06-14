@@ -38,13 +38,13 @@ public class Main {
                 System.out.println("face ceva???");
                 for (Ant ant : NestLoader.nestPopulation) {
                     System.out.println("Position before move:" + ant.getxPosition());
+                    NestLoader.clearAntPosition(ant.getxPosition(), ant.getyPosition(), ant);
                     ant.move();
                     NestLoader.updateAntPosition(ant.getxPosition(), ant.getyPosition(), ant);
                     System.out.println("Position after move:" + ant.getxPosition());
                 }
                 NestLoader.drawNest();
             }
-
             else break;
         }
 

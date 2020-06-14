@@ -52,5 +52,8 @@ public class NestLoader {
         antsNest[x][y] = ant.getAntType();
     }
 
+    public static void clearAntPosition(int x, int y, Ant ant){
+        antsNest[x][y] = "*";
+    }
 
 }

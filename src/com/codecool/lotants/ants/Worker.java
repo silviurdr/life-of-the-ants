@@ -13,7 +13,24 @@ public class Worker extends Ant {
 
     @Override
     public void  move() {
-        this.setyPosition(this.getyPosition() + Utils.randomDirectionForWorkers());
-        this.setxPosition(this.getxPosition() + Utils.randomDirectionForWorkers());
+        System.out.println("I'm moving");
+
+        while (true) {
+            int nextYPosition = this.getyPosition() + Utils.randomDirectionForWorkers();
+            System.out.println(nextYPosition);
+            if (nextYPosition > -1 && nextYPosition < 30) {
+                this.setyPosition(nextYPosition);
+                break;
+            } else continue;
+        }
+
+        while (true) {
+            int nextXPosition=this.getxPosition() + Utils.randomDirectionForWorkers();
+            System.out.println(nextXPosition);
+            if (nextXPosition > -1 && nextXPosition < 30) {
+                this.setxPosition(nextXPosition);
+                break;
+            } else continue;
+        }
     }
 }
