@@ -1,0 +1,80 @@
+@startuml
+
+
+title Life Of The Ants Diagram
+
+package "parent" {
+
+
+    together {
+        class Nest {
+            - width: int
+            - height: int
+            - cells: Cell[][]
+        }
+
+        class Cell {
+            - antType: String
+            - position: Cell[][]
+            --
+            + getAntType(): String
+            + setAntType(): void
+        }
+
+        class NestLoader {
+            +loadNest(): void
+        }
+    }
+
+    together {
+        abstract class Ant {
+            - name
+            --
+            + move(): void
+            + getPosition()
+            + setPosition()
+        }
+
+        class Queen {
+            - position
+            - moodCounter: int
+        }
+
+    }
+
+    together {
+        class Worker{
+
+        }
+        class Soldier{
+         --
+         + moveToWasp(): void
+         + killWasp(): void
+        }
+        class Drone{
+
+        }
+    }
+
+    together {
+          class Wasp{
+            - position
+            --
+            + disappear: void
+          }
+    }
+
+    Ant -[hidden]-> Drone
+    Drone -[hidden]-> Wasp
+
+}
+
+class Ant extends Cell
+class Worker extends Ant
+class Soldier extends Ant
+class Drone extends Ant
+class Queen extends Ant
+class Wasp extends Ant
+
+
+@enduml
